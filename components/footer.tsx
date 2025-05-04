@@ -10,7 +10,8 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">AnyComp</h3>
             <p className="text-muted-foreground mb-4">
-              Making company incorporation simple and accessible for entrepreneurs across Malaysia.
+            Platform for
+            Company incorporation and management.
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" className="rounded-full">
