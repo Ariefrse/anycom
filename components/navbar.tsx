@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Search, Bell, CircleUser, Menu, X } from 'lucide-react';
@@ -48,48 +49,46 @@ export function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <div className="text-primary flex items-center gap-1">
-                <div className="h-8 w-8 relative">
-                  <div className="absolute inset-0 border-2 border-primary rounded-full"></div>
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[40%] font-bold text-lg">A</div>
-                </div>
-                <span className="font-bold text-lg tracking-tight">ANYCOMP</span>
-              </div>
+              <Image
+                src="/images/logo.png"
+                alt="AnyComp Logo"
+                width={58}
+                height={58}
+                className="m-2 mr-4 "
+              />
             </Link>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2">
-            {navItems.map((item) => (
-              <div key={item.label} className="relative group">
-                <Button 
-                  variant="ghost" 
-                  className="flex items-center gap-1 px-3"
-                  onClick={() => item.dropdown && toggleDropdown(item.label)}
-                >
-                  {item.label}
-                  {item.dropdown && <ChevronDown className="h-4 w-4" />}
-                </Button>
-                
-                {item.dropdown && activeDropdown === item.label && (
-                  <div className="absolute left-0 mt-1 w-48 bg-background rounded-md shadow-lg py-1 z-10 border border-border">
-                    {item.items.map((subItem) => (
-                      <Link 
-                        key={subItem}
-                        href="#" 
-                        className="block px-4 py-2 text-sm hover:bg-muted"
-                      >
-                        {subItem}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+            {/* Desktop Navigation - moved next to logo */}
+            <div className="hidden md:flex items-center space-x-2 ml-2">
+              {navItems.map((item) => (
+                <div key={item.label} className="relative group">
+                  <Button 
+                    variant="ghost" 
+                    className="flex items-center gap-1 px-3"
+                    onClick={() => item.dropdown && toggleDropdown(item.label)}
+                  >
+                    {item.label}
+                    {item.dropdown && <ChevronDown className="h-4 w-4" />}
+                  </Button>
+                  {item.dropdown && activeDropdown === item.label && (
+                    <div className="absolute left-0 mt-1 w-48 bg-background rounded-md shadow-lg py-1 z-10 border border-border">
+                      {item.items.map((subItem) => (
+                        <Link 
+                          key={subItem}
+                          href="#" 
+                          className="block px-4 py-2 text-sm hover:bg-muted"
+                        >
+                          {subItem}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Action Buttons */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden md:flex  space-x-4">
             <Button variant="ghost" size="icon">
               <Search className="h-5 w-5" />
             </Button>

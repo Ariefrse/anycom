@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -78,5 +79,16 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Nunito Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+}
+
+@layer components {
+  .custom-select-trigger:focus,
+  .custom-select-trigger[data-state="open"] {
+    border-color: #60a5fa !important;
+    background-color: #e0edff !important;
+    box-shadow: 0 0 0 1.5px #60a5fa !important;
+    outline: none !important;
   }
 }

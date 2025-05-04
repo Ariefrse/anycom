@@ -61,17 +61,8 @@ export function Footer() {
               </p>
             </div>
             <div className="mt-4">
-              <Button className="w-full">Contact Us</Button>
+              <Button className="w-full bg-[#1e3a8a] hover:bg-[#1e3a8a]/90 text-white">Contact Us</Button>
             </div>
-          </div>
-        </div>
-        
-        <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground text-sm">
-          <p>&copy; {new Date().getFullYear()} AnyComp. All rights reserved.</p>
-          <div className="flex justify-center space-x-4 mt-2">
-            <Link href="#" className="hover:text-foreground transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-foreground transition-colors">Terms of Service</Link>
-            <Link href="#" className="hover:text-foreground transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>

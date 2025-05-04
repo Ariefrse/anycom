@@ -34,7 +34,7 @@ export function ProviderCard({ provider }: ProviderCardProps) {
   return (
     <div 
       className={cn(
-        "flex flex-col rounded-xl bg-white overflow-hidden transition-all duration-300",
+        "flex flex-col rounded-xl bg-gray-50 border border-gray-200 overflow-hidden transition-all duration-300",
         isHovered ? "shadow-lg" : "shadow-sm"
       )}
       onMouseEnter={() => setIsHovered(true)}
@@ -42,7 +42,7 @@ export function ProviderCard({ provider }: ProviderCardProps) {
     >
       <div className="p-5 flex flex-col space-y-2">
         {/* Logo */}
-        <div className="w-full h-28 relative mb-2">
+        <div className="w-full h-60 relative flex items-center justify-center bg-white">
           <Image 
             src={provider.logo} 
             alt={provider.name}

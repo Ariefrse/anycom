@@ -79,8 +79,8 @@ export function SearchFilter({ onFilterChange }: SearchFilterProps) {
         </div>
 
         <div className="p-2 flex items-end">
-          <Button className="w-full gap-2" size="default">
-            <Search className="h-4 w-4" />
+          <Button className="w-full gap-1 bg-[#1e3a8a] hover:bg-[#1e3a8a]/90 text-white hover:text-white/90" size="default" variant="outline" >
+            <Search className="h-3 w-3" />
             <span>Search</span>
           </Button>
         </div>
